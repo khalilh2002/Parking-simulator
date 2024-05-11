@@ -23,8 +23,10 @@ public class park extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        imgPark =new ImageIcon("src/img/parking.png");
-        imgPark.paintIcon(this, g, WIDTH,WIDTH);
+//        imgPark =new ImageIcon("src/img/parking.png");
+        imgPark =new ImageIcon("asset/parking.png");
+
+        imgPark.paintIcon(this, g, WIDTH,HEIGHT);
 
 
 

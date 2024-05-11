@@ -17,6 +17,7 @@ public class voiture extends JLabel implements Runnable{
 
     public voiture(int id , ImageIcon icon ){
 
+
         this.x = 200;
         this.y = 0;
         this.id=id;
@@ -25,24 +26,24 @@ public class voiture extends JLabel implements Runnable{
         this.setIcon(img);
 
         Dimension size = getPreferredSize();
-        setBounds(x,y,size.width , size.height);
+        setBounds(x,y,150 , 141);
 
         state = new boolean[2];
         positionExitCar = new int[2];
 
         for (int i=0 ; i< state.length ; i++){
-            positionExitCar[i]=-800;
+            positionExitCar[i]=200;
         }
     }
     //edit for asset
     public void setIconExitParking(int i)
     {
-        img=new ImageIcon("src/img/car"+i+"_"+i+".png");
+        img=new ImageIcon("asset/car"+i+"_"+i+".png");
         this.setIcon(img);
     }
     public void setIconParking(int i)
     {
-        img=new ImageIcon("src/img/car"+this.id+".png");
+        img=new ImageIcon("asset/car"+this.id+".png");
         this.setIcon(img);
     }
 
@@ -97,7 +98,7 @@ public class voiture extends JLabel implements Runnable{
                     try {
                         Thread.sleep(100);
                     } catch (InterruptedException ex) {
-                        Logger.getLogger(Car.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(voiture.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 }
             }MoveTo.moveIn(this,1300);
@@ -153,7 +154,7 @@ public class voiture extends JLabel implements Runnable{
     public void run() {
         System.out.println("ok");
         try {
-            int x= 50 ;
+            int x= 2000 ;
 
             park.semaphoreEntree.acquire();
             this.entrePark();
@@ -172,9 +173,12 @@ public class voiture extends JLabel implements Runnable{
     }
 
     public static void main(String[] args ){
+
+
+
         System.out.println("hello agian voiture !!!");
-        ImageIcon car=new ImageIcon("src/img/car1_1.png");
-        ImageIcon car2=new ImageIcon("src/img/car2_2.png");
+        ImageIcon car=new ImageIcon("asset/car1_1.png");
+        ImageIcon car2=new ImageIcon("asset/car2_2.png");
 
         JFrame frame = new JFrame("Khalil El Houssine ");
         park panel = new park();

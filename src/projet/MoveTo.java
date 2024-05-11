@@ -7,7 +7,7 @@ public class MoveTo {
     public static void moveIn(voiture car , int yMAx){
         while (car.y<=yMAx){
             for (int i = 0 ; i!= 2 ; i++){
-                if (voiture.state[i] && car.y < voiture.positionExitCar[i]){
+                if (voiture.state[i] && car.y <= voiture.positionExitCar[i]){
                     try{
                         Thread.sleep(100);
                     }catch (InterruptedException ex) {
@@ -53,7 +53,7 @@ public class MoveTo {
             try {
                 Thread.sleep(100);
             } catch (InterruptedException ex) {
-                Logger.getLogger(Car.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(voiture.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
@@ -67,7 +67,7 @@ public class MoveTo {
             try {
                 Thread.sleep(100);
             } catch (InterruptedException ex) {
-                Logger.getLogger(Car.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(voiture.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         }
